@@ -106,6 +106,8 @@
 			compatible = "wch,usart";
 			reg = <0x40013800 0x10>;
 			clocks = <&rcc CH32V00X_CLOCK_USART1>;
+			dmas = <&dma1 CH32V003_USART1_RX_DMA>, <&dma1 CH32V003_USART1_TX_DMA>;
+			dma-names = "rx", "tx";
 			interrupt-parent = <&pfic>;
 			interrupts = <32>;
 		};
@@ -125,6 +127,7 @@
 			interrupt-parent = <&pfic>;
 			interrupts = <22>, <23>, <24>, <25>, <26>, <27>, <28>;
 			dma-channels = <7>;
+			status = "okay";
 		};
 	};
 };
